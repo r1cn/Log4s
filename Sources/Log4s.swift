@@ -17,6 +17,7 @@ public class Log4s {
     
     internal let config: Config
     
+    @discardableResult
     public class func start(_ config: Config? = nil) -> Log4s {
         let logger = Log4s(config: config)
         
