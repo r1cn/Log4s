@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E8328151FE1311D003777C4 /* Log4s.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E8328131FE1311D003777C4 /* Log4s.h */; };
+		1E8328151FE1311D003777C4 /* Log4s.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E8328131FE1311D003777C4 /* Log4s.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E83281E1FE1312C003777C4 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E83281D1FE1312C003777C4 /* Tests.swift */; };
 		1E8328201FE1312C003777C4 /* Log4s.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E8327F81FE130CD003777C4 /* Log4s.framework */; };
+		1E8328291FE374CC003777C4 /* Log4s.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8328281FE374CC003777C4 /* Log4s.swift */; };
+		1E83282B1FE3790C003777C4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E83282A1FE3790B003777C4 /* Config.swift */; };
+		1E83282F1FE38071003777C4 /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E83282E1FE38071003777C4 /* Format.swift */; };
+		1E8328311FE382C9003777C4 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8328301FE382C9003777C4 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,10 @@
 		1E83281B1FE1312C003777C4 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E83281D1FE1312C003777C4 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		1E83281F1FE1312C003777C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E8328281FE374CC003777C4 /* Log4s.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log4s.swift; sourceTree = "<group>"; };
+		1E83282A1FE3790B003777C4 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		1E83282E1FE38071003777C4 /* Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
+		1E8328301FE382C9003777C4 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +81,10 @@
 			children = (
 				1E8328131FE1311D003777C4 /* Log4s.h */,
 				1E8328141FE1311D003777C4 /* Info.plist */,
+				1E8328281FE374CC003777C4 /* Log4s.swift */,
+				1E83282A1FE3790B003777C4 /* Config.swift */,
+				1E83282E1FE38071003777C4 /* Format.swift */,
+				1E8328301FE382C9003777C4 /* File.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -148,6 +160,7 @@
 				TargetAttributes = {
 					1E8327F71FE130CD003777C4 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					1E83281A1FE1312C003777C4 = {
@@ -196,6 +209,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E8328291FE374CC003777C4 /* Log4s.swift in Sources */,
+				1E8328311FE382C9003777C4 /* File.swift in Sources */,
+				1E83282B1FE3790C003777C4 /* Config.swift in Sources */,
+				1E83282F1FE38071003777C4 /* Format.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +351,7 @@
 		1E83280D1FE130CD003777C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -347,6 +365,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = r1cn.Log4s;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -355,6 +374,7 @@
 		1E83280E1FE130CD003777C4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -376,6 +396,7 @@
 		1E8328241FE1312C003777C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/Info.plist;
@@ -390,6 +411,7 @@
 		1E8328251FE1312C003777C4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/Info.plist;
