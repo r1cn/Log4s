@@ -52,7 +52,7 @@ public class Log4s {
         print(logMessage)
 #endif
         if level > Level.debug {
-            File().write(message, to: config.directoryPath)
+            File().write(logMessage, to: config.directoryPath)
         }
     }
 }
