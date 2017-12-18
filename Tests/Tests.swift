@@ -19,7 +19,8 @@ class Tests: XCTestCase {
         Log4s.log("i will write this log to file", .info)
         
         Log4s.log("i will write this warning log to file", .warning)
+        
+        Log4s.log("YUYO come here")
     }
-    
     
 }
