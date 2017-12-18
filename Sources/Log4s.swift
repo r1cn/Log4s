@@ -4,6 +4,7 @@ public enum Level: Int {
     case debug = 0  // just print to console, not write to log file
     case info       // print to console & write to log file
     case warning    // warning message, print to console & write to log file
+    case error      // error message, print to console & write to log file
     
     static func >(lhs: Level, rhs: Level) -> Bool {
         return lhs.rawValue > rhs.rawValue
@@ -46,9 +47,10 @@ public class Log4s {
              function: StaticString = #function,
              line: Int = #line) {
         
-        let logMessage = config.format(message, file, function, line)
+        let logMessage = config.format(message, level, file, function, line)
+#if DEBUG
         print(logMessage)
-        
+#endif
         if level > Level.debug {
             File().write(message, to: config.directoryPath)
         }

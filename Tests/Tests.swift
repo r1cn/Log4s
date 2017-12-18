@@ -7,19 +7,33 @@
 //
 
 import XCTest
-import Log4s
+@testable import Log4s
 
 class Tests: XCTestCase {
     
-    func testExample() {
+    override func setUp() {
         Log4s.start()
-        
+    }
+    
+    func testLog() {
         Log4s.log("hello world", .debug)
         
         Log4s.log("i will write this log to file", .info)
         
         Log4s.log("i will write this warning log to file", .warning)
+        
+        Log4s.log("i will write this error log to file", .error)
     }
     
-    
+    func testLogFile() {
+        
+        guard let directoryPath = Log4s.shared?.config.directoryPath else {
+            XCTAssert(false)
+            return
+        }
+        
+        let fileManager = FileManager.default
+        
+        XCTAssert(fileManager.fileExists(atPath: directoryPath) == true)
+    }
 }
